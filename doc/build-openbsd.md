@@ -18,7 +18,7 @@ pkg_add automake # (select highest version, e.g. 1.15)
 pkg_add python # (select highest version, e.g. 3.5)
 ```
 
-The default C++ compiler that comes with OpenBSD 5.9 is g++ 4.2. This version is old (from 2007), and is not able to compile the current version of Litecoin Core, primarily as it has no C++11 support, but even before there were issues. So here we will be installing a newer compiler.
+The default C++ compiler that comes with OpenBSD 5.9 is g++ 4.2. This version is old (from 2007), and is not able to compile the current version of Linuxcoin Core, primarily as it has no C++11 support, but even before there were issues. So here we will be installing a newer compiler.
 
 GCC
 -------
@@ -39,12 +39,12 @@ Do not use `pkg_add boost`! The boost version installed thus is compiled using t
     ...
     Segmentation fault (core dumped)
 
-This makes it necessary to build boost, or at least the parts used by Litecoin Core, manually:
+This makes it necessary to build boost, or at least the parts used by Linuxcoin Core, manually:
 
 ```
 # Pick some path to install boost to, here we create a directory within the litecoin directory
-LITECOIN_ROOT=$(pwd)
-BOOST_PREFIX="${LITECOIN_ROOT}/boost"
+LINUXCOIN_ROOT=$(pwd)
+BOOST_PREFIX="${LINUXCOIN_ROOT}/boost"
 mkdir -p $BOOST_PREFIX
 
 # Fetch the source and verify that it is not tampered with
@@ -75,8 +75,8 @@ You cannot use the BerkeleyDB library from ports, for the same reason as boost a
 
 ```bash
 # Pick some path to install BDB to, here we create a directory within the litecoin directory
-LITECOIN_ROOT=$(pwd)
-BDB_PREFIX="${LITECOIN_ROOT}/db4"
+LINUXCOIN_ROOT=$(pwd)
+BDB_PREFIX="${LINUXCOIN_ROOT}/db4"
 mkdir -p $BDB_PREFIX
 
 # Fetch the source and verify that it is not tampered with
@@ -108,7 +108,7 @@ The change will only affect the current shell and processes spawned by it. To
 make the change system-wide, change `datasize-cur` and `datasize-max` in
 `/etc/login.conf`, and reboot.
 
-### Building Litecoin Core
+### Building Linuxcoin Core
 
 **Important**: use `gmake`, not `make`. The non-GNU `make` will exit with a horrible error.
 
