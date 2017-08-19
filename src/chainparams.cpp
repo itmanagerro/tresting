@@ -121,34 +121,34 @@ public:
 
 
 
-	if (true && block.GetHash() != hashGenesisBlock)
+	if (true && genesis.GetHash() != hashGenesisBlock)
         {
 		printf("Searching for genesis block...\n");
 		// This will figure out a valid hash and Nonce if you're
 		// creating a different genesis block:
-		uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
+		uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
 		uint256 thash;
 		char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
 
 		loop
 		{
-                	scrypt_1024_1_1_256_sp(BEGIN(block.nVersion), BEGIN(thash), scratchpad);
+                	scrypt_1024_1_1_256_sp(BEGIN(genesis.nVersion), BEGIN(thash), scratchpad);
                 	if (thash <= hashTarget)
                     		break;
-                	if ((block.nNonce & 0xFFF) == 0)
+                	if ((genesis.nNonce & 0xFFF) == 0)
                 	{
-                    		printf("nonce %08X: hash = %s (target = %s)\n", block.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
+                    		printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
                 	}
-                	++block.nNonce;
-                	if (block.nNonce == 0)
+                	++genesis.nNonce;
+                	if (genesis.nNonce == 0)
                 	{
                     		printf("NONCE WRAPPED, incrementing time\n");
-	                    	++block.nTime;
+	                    	++genesis.nTime;
 			}
 		}
-            	printf("block.nTime = %u \n", block.nTime);
-            	printf("block.nNonce = %u \n", block.nNonce);
-            	printf("block.GetHash = %s\n", block.GetHash().ToString().c_str());
+            	printf("genesis.nTime = %u \n", genesis.nTime);
+            	printf("genesis.nNonce = %u \n", genesis.nNonce);
+            	printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
 	}
 
 
