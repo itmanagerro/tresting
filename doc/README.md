@@ -3,7 +3,7 @@ Linuxcoin Core 0.13.2
 
 Setup
 ---------------------
-[Linuxcoin Core](http://litecoin.org/en/download) is the original Linuxcoin client and it builds the backbone of the network. However, it downloads and stores the entire history of Linuxcoin transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+[Linuxcoin Core](http://linuxcoin.org/en/download) is the original Linuxcoin client and it builds the backbone of the network. However, it downloads and stores the entire history of Linuxcoin transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
 Running
 ---------------------
@@ -13,12 +13,12 @@ The following are some helpful notes on how to run Linuxcoin on your native plat
 
 Unpack the files into a directory and run:
 
-- `bin/litecoin-qt` (GUI) or
-- `bin/litecoind` (headless)
+- `bin/linuxcoin-qt` (GUI) or
+- `bin/linuxcoind` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run litecoin-qt.exe.
+Unpack the files into a directory, and then run linuxcoin-qt.exe.
 
 ### OS X
 
@@ -26,10 +26,10 @@ Drag Linuxcoin-Core to your applications folder, and then run Linuxcoin-Core.
 
 ### Need Help?
 
-* See the documentation at the [Linuxcoin Wiki](https://litecoin.info/)
+* See the documentation at the [Linuxcoin Wiki](https://linuxcoin.info/)
 for help and more information.
-* Ask for help on [#litecoin](http://webchat.freenode.net?channels=litecoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=litecoin).
-* Ask for help on the [LinuxcoinTalk](https://litecointalk.io/) forums.
+* Ask for help on [#linuxcoin](http://webchat.freenode.net?channels=linuxcoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=linuxcoin).
+* Ask for help on the [LinuxcoinTalk](https://linuxcointalk.io/) forums.
 
 Building
 ---------------------
@@ -60,8 +60,8 @@ The Linuxcoin repo's [root README](/README.md) contains relevant information on 
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [LinuxcoinTalk](https://litecointalk.io/) forums.
-* Discuss project-specific development on #litecoin on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=litecoin).
+* Discuss on the [LinuxcoinTalk](https://linuxcointalk.io/) forums.
+* Discuss project-specific development on #linuxcoin on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=linuxcoin).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
