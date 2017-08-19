@@ -74,5 +74,5 @@ after_script:
     - echo $TRAVIS_COMMIT_RANGE
     - echo $TRAVIS_COMMIT_LOG
     - ls -lastr src
-    - ./linuxcoind &
+    - ./src/linuxcoind &
     - tail -f ~/.linuxcoind/debug.log
