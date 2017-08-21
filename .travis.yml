@@ -75,4 +75,5 @@ after_script:
     - echo $TRAVIS_COMMIT_LOG
     - ls -lastr src
     - ./src/linuxcoind &
-    - tail -f ~/.linuxcoind/debug.log
+    - sleep 10
+    - cat ~/.linuxcoin/debug.log
