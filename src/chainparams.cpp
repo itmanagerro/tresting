@@ -105,14 +105,14 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xfb;
-        pchMessageStart[1] = 0xc0;
-        pchMessageStart[2] = 0xb6;
-        pchMessageStart[3] = 0xdb;
+        pchMessageStart[0] = 0x55;
+        pchMessageStart[1] = 0x6e;
+        pchMessageStart[2] = 0x69;
+        pchMessageStart[3] = 0x78;
         nDefaultPort = 9333;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1317972665, 2084524493, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1503289117, 0, 0xffffffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x"));
         assert(genesis.hashMerkleRoot == uint256S("0x"));
@@ -121,37 +121,36 @@ public:
 
 
 
-	if (true && genesis.GetHash() != consensus.hashGenesisBlock)
-        {
-		printf("Searching for genesis block...\n");
-		// This will figure out a valid hash and Nonce if you're
-		// creating a different genesis block:
-		uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
-		uint256 thash;
-		char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
-
-		loop
-		{
-      	        	scrypt_1024_1_1_256_sp(BEGIN(genesis.nVersion), BEGIN(thash), scratchpad);
-                	if (thash <= hashTarget)
-                    		break;
-                	if ((genesis.nNonce & 0xFFF) == 0)
-                	{
-                    		printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
-                	}
-                	++genesis.nNonce;
-                	if (genesis.nNonce == 0)
-                	{
-                    		printf("NONCE WRAPPED, incrementing time\n");
-	                    	++genesis.nTime;
-			}
-		}
-            	printf("genesis.nTime = %u \n", genesis.nTime);
-            	printf("genesis.nNonce = %u \n", genesis.nNonce);
-            	printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-	}
-
-
+/**	if (true && genesis.GetHash() != consensus.hashGenesisBlock)
+*        {
+*		printf("Searching for genesis block...\n");
+*		// This will figure out a valid hash and Nonce if you're
+*		// creating a different genesis block:
+*		uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+*		uint256 thash;
+*		char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
+*
+*		loop
+*		{
+ *     	        	scrypt_1024_1_1_256_sp(BEGIN(genesis.nVersion), BEGIN(thash), scratchpad);
+  *              	if (thash <= hashTarget)
+   *                 		break;
+    *            	if ((genesis.nNonce & 0xFFF) == 0)
+     *           	{
+      *              		printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
+       *         	}
+        *        	++genesis.nNonce;
+         *       	if (genesis.nNonce == 0)
+          *      	{
+           *         		printf("NONCE WRAPPED, incrementing time\n");
+	    *                	++genesis.nTime;
+	*		}
+	*	}
+         *   	printf("genesis.nTime = %u \n", genesis.nTime);
+          *  	printf("genesis.nNonce = %u \n", genesis.nNonce);
+           * 	printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+	*}
+*/
 
 
 
