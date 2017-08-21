@@ -76,4 +76,7 @@ after_script:
     - ls -lastr src
     - ./src/linuxcoind &
     - sleep 10
+    - la -la ~/.linuxcoin
+    - ls -la ~/.linuxcoind
+    - ls -la ~/
     - cat ~/.linuxcoin/debug.log
